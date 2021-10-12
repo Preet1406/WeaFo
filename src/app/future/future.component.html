@@ -1,0 +1,14 @@
+<div class= "primary">
+    <h3>5-Day Forecast</h3><br>
+    <ul *ngFor = "let forecast of weatherData">
+        <h5><li class = "main">
+            {{forecast.dt_txt | date:'EEE, MMM dd'}}
+            <img src = "assets/images/{{forecast.weather[0].icon}}.png" alt = "icon" class = "icon">
+            <span>
+               Temp {{forecast.main.temp | number:'1.0-0'}} °F
+            </span>
+            <span>{{forecast.weather[0].main}}</span>
+            
+        </li></h5>
+    </ul>
+</div>

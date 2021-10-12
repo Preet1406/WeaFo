@@ -1,0 +1,24 @@
+<div *ngIf = "weatherNow" class = "centree">
+    <h3> Current Forecast </h3>
+    <div class = "time">{{currentTime | date:"HH:mm - EE MMM"}}</div>
+    <div class = "location">{{location.name}}, {{location.country}}</div>
+    <div class = "temp">
+        <span><img src = "assets/images/{{weatherNow.weather[0].icon}}.png" alt = "icon" class = "icon"></span>
+        <h3 class="temp2">{{weatherNow.main.temp | number:'1.0-0'}} °F</h3>
+    </div>
+    <div class = "details">
+        <div class="main">
+            Feels like {{weatherNow.main.feels_like | number:'1.0-0'}} °F.{{weatherNow.weather[0].main}}.{{weatherNow.weather[0].description}}
+        </div>
+        <div class = "sub">
+            Humidity: {{weatherNow.main.humidity}}%
+        </div>
+    </div>
+    <div class = "grid-container">
+        <h3>3-Hour Forecast</h3>
+        <div *ngFor = "let item of timeline" >
+            <div class="grid-item">{{item.time | date:'HH:mm'}}</div>
+            <div class = "grid-item">{{item.temp | number:'1.0-0'}} °F</div>
+        </div>
+    </div>
+</div>

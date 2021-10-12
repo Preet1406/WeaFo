@@ -1,0 +1,26 @@
+.main{
+    display: grid;
+    grid-template-columns: repeat(5, 10rem);
+}
+
+.icon{
+   
+    width: 5.7rem;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: 0.3s ease-in-out;
+
+}
+.icon:hover{
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+h3{
+    padding-left: 170px;
+}
+
+h5{
+    grid-column: 1 / -1;
+}
